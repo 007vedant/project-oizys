@@ -8,11 +8,12 @@ import FormContainer from '../components/FormContainer';
 
 import Question from '../components/Question';
 import { submitSurvey } from '../actions/survey.actions';
+import questions from '../data/questions02.json';
 // import { surveyFinalSubmit } from '../actions/survey.actions';
 
 const SurveyScreen02 = ({ history }) => {
-  const numStart = 3;
-  const numQuestions = 2;
+  const numStart = 5;
+  const numQuestions = 4;
   const initialResponses = useSelector((state) => state.surveyResponses);
   const [responses, setResponses] = useState(initialResponses);
   const [error, setError] = useState('');
@@ -49,10 +50,6 @@ const SurveyScreen02 = ({ history }) => {
     history.push('/survey/03');
   };
 
-  const question =
-    'In the above sentences, I wonder "some question" has the meaning of "a certain question" or, "some questions\' not "some question" is right.';
-  const options = ['Always', 'Usually', 'Sometimes', 'Never'];
-
   return (
     <Container>
       <Link to='/survey/01' className='btn btn-light my-3'>
@@ -68,20 +65,16 @@ const SurveyScreen02 = ({ history }) => {
           <Loader />
         ) : (
           <Form onSubmit={submitHandler}>
-            <Question
-              qno='03'
-              question={question}
-              options={options}
-              responses={responses}
-              setResponses={setResponses}
-            />
-            <Question
-              qno='04'
-              question={question}
-              options={options}
-              responses={responses}
-              setResponses={setResponses}
-            />
+            {questions.map(({ qno, question, options }) => (
+              <Question
+                key={qno}
+                qno={qno}
+                question={question}
+                options={options}
+                responses={responses}
+                setResponses={setResponses}
+              />
+            ))}
 
             <Button type='submit' variant='primary'>
               {loadingSubmit ? (

@@ -8,9 +8,10 @@ import FormContainer from '../components/FormContainer';
 
 import Question from '../components/Question';
 import { surveyFirstSubmit } from '../actions/survey.actions';
+import questions from '../data/questions01.json';
 
 const SurveyScreen01 = ({ history, match }) => {
-  const numQuestions = 2;
+  const numQuestions = 4;
   const initialResponses = {};
   const [responses, setResponses] = useState(initialResponses);
   const [error, setError] = useState('');
@@ -41,10 +42,6 @@ const SurveyScreen01 = ({ history, match }) => {
     history.push('/survey/02');
   };
 
-  const question =
-    'In the above sentences, I wonder "some question" has the meaning of "a certain question" or, "some questions\' not "some question" is right.';
-  const options = ['Always', 'Usually', 'Sometimes', 'Never'];
-
   return (
     <Container>
       <Link to='/' className='btn btn-light my-3'>
@@ -58,20 +55,16 @@ const SurveyScreen01 = ({ history, match }) => {
           <Loader />
         ) : (
           <Form onSubmit={submitHandler}>
-            <Question
-              qno='01'
-              question={question}
-              options={options}
-              responses={responses}
-              setResponses={setResponses}
-            />
-            <Question
-              qno='02'
-              question={question}
-              options={options}
-              responses={responses}
-              setResponses={setResponses}
-            />
+            {questions.map(({ qno, question, options }) => (
+              <Question
+                key={qno}
+                qno={qno}
+                question={question}
+                options={options}
+                responses={responses}
+                setResponses={setResponses}
+              />
+            ))}
 
             <Button type='submit' variant='primary'>
               Next
