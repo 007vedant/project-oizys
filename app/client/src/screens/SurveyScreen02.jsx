@@ -12,8 +12,8 @@ import questions from '../data/questions02.json';
 // import { surveyFinalSubmit } from '../actions/survey.actions';
 
 const SurveyScreen02 = ({ history }) => {
-  const numStart = 5;
-  const numQuestions = 4;
+  const numStart = 9;
+  const numQuestions = 10;
   const initialResponses = useSelector((state) => state.surveyResponses);
   const [responses, setResponses] = useState(initialResponses);
   const [error, setError] = useState('');
@@ -56,7 +56,8 @@ const SurveyScreen02 = ({ history }) => {
         Back
       </Link>
       <FormContainer>
-        <h1>Page 02</h1>
+        <h1>Patient Health Questionnaire</h1>
+        <h6>Over the last 2 weeks, how often have you been bothered by the following problems?</h6>
         {(error || errorSubmit) && (
           <Message variant='danger'>{error || errorSubmit}</Message>
         )}
