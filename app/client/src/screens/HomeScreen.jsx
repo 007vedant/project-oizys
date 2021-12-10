@@ -6,7 +6,7 @@ const HomeScreen = () => {
   return (
     <Jumbotron>
       <h1>Hello!</h1>
-      <p>Welcome to Elixir. A simple and secure way to share your health records online.</p>
+      <p>Please contribute to our research by taking a quick questionnare and recording the audio. Thanks!</p>
       <p>
         <LinkContainer to='/register'>
           <Button variant='primary'>Join Now</Button>

@@ -1,22 +1,42 @@
 [
   {
     "qno": "01",
-    "question": "What the fuck is going on here?",
-    "options": ["A", "B", "C", "D"]
+    "question": "Feeling nervous, anxious or on edge?",
+    "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
     "qno": "02",
-    "question": "What the fuck is going on here?",
-    "options": ["A", "B", "C", "D"]
+    "question": "Not being able to stop or control worrying?",
+    "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
     "qno": "03",
-    "question": "What the fuck is going on here?",
-    "options": ["A", "B", "C", "D"]
+    "question": "Worrying too much about different things?",
+    "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
     "qno": "04",
-    "question": "What the fuck is going on here?",
-    "options": ["A", "B", "C", "D"]
+    "question": "Trouble relaxing?",
+    "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
+  },
+  {
+    "qno": "05",
+    "question": "Being so restless that it is hard to sit still?",
+    "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
+  },
+  {
+    "qno": "06",
+    "question": "Becoming easily annoyed or irritated?",
+    "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
+  },
+  {
+    "qno": "07",
+    "question": "Feeling afraid as if something awful might happen?",
+    "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
+  },
+  {
+    "qno": "08",
+    "question": "If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
+    "options": ["Not difficult at all", "Somewhat difficult", "Very Difficult", "Extremely Diffcult"]
   }
 ]

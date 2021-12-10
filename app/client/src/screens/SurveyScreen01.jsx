@@ -11,7 +11,7 @@ import { surveyFirstSubmit } from '../actions/survey.actions';
 import questions from '../data/questions01.json';
 
 const SurveyScreen01 = ({ history, match }) => {
-  const numQuestions = 4;
+  const numQuestions = 8;
   const initialResponses = {};
   const [responses, setResponses] = useState(initialResponses);
   const [error, setError] = useState('');
@@ -48,7 +48,8 @@ const SurveyScreen01 = ({ history, match }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Page 01</h1>
+        <h1>Generalized Anxiety Disorder Screener</h1>
+        <h6>Over the last 2 weeks, how often have you been bothered by the following problems?</h6>
         {error && <Message variant='danger'>{error}</Message>}
 
         {loading ? (
