@@ -19,23 +19,22 @@ export const submitSurvey = (responses) => async (dispatch, getState) => {
   try {
     dispatch({ type: SURVEY_SUBMIT_REQUEST, payload: responses });
 
-    // const {
-    //   userLogin: { userInfo },
-    // } = getState();
+    const {
+      userLogin: { userInfo },
+    } = getState();
 
-    // const config = {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     Authorization: userInfo.token,
-    //   },
-    // };
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: userInfo.token,
+      },
+    };
 
-    // const { data } = await axios.post(
-    //   BASE_URL + `/api/users/records`,
-    //   responses,
-    //   config
-    // );
-    const data = {};
+    const { data } = await axios.post(
+      BASE_URL + `/api/screening`,
+      responses,
+      config
+    );
     dispatch({ type: SURVEY_SUBMIT_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
