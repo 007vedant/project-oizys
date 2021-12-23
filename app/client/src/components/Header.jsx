@@ -20,7 +20,7 @@ const Header = () => {
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
-              <h3 className='icon'>elixir</h3>
+              <h3 className='icon'>ResearchQ</h3>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />

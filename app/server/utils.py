@@ -1,4 +1,5 @@
 import os
+import csv
 import jwt
 from functools import wraps
 from server.config import Config
@@ -34,7 +35,16 @@ def allowed_file(filename):
     )
 
 
-def upload_file(file, filename, _id):
+def upload_recording(file, filename, _id):
     path = os.path.join(Config.UPLOAD_DIR, str(_id))
     os.makedirs(path, exist_ok=True)
     file.save(os.path.join(path, filename))
+
+
+def upload_csv(response, filename, _id):
+    path = os.path.join(Config.UPLOAD_DIR, str(_id))
+    os.makedirs(path, exist_ok=True)
+    with open(f"{path}/{filename}.csv", "w") as file:
+        writer = csv.writer(file)
+        for key, value in response.items():
+            writer.writerow([key, value])

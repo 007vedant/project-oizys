@@ -8,9 +8,20 @@ import './index.css';
 
 import App from './App';
 
+class Title extends React.Component{
+  componentDidMount(){
+    document.title = "researchq"
+  }
+  render(){
+    return (
+      <Root>
+        <App />
+      </Root>
+    )
+  }
+}
+
 ReactDOM.render(
-  <Root>
-    <App />
-  </Root>,
+  <Title />,
   document.getElementById('root')
 );

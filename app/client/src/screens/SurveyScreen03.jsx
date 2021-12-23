@@ -92,12 +92,9 @@ const AddRecordScreen = ({ history, match }) => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <h3>Please upload a recording of following text: </h3>
+            <h3>Audio Upload</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              ad optio vitae dolorum, fuga eum quaerat voluptatem! Deserunt
-              illum ab aut adipisci impedit sequi provident, at aliquam quaerat
-              ullam unde?
+              Please upload a speech recording of yourself saying, "I'm a student of NIT Rourkela."
             </p>
 
             <Form.Group controlId='image'>

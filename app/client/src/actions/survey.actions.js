@@ -1,5 +1,5 @@
-// import axios from 'axios';
-// import BASE_URL from '../config';
+import axios from 'axios';
+import BASE_URL from '../config';
 import {
   SURVEY_FIRST_SUBMIT,
   SURVEY_SUBMIT_FAIL,
