@@ -15,6 +15,8 @@ const RegisterScreen = ({ history, location }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [age, setAge] = useState('');
+  const [sex, setSex] = useState('');
   const [message, setMessage] = useState(null);
 
   const dispatch = useDispatch();
@@ -40,11 +42,11 @@ const RegisterScreen = ({ history, location }) => {
 
     console.log('SIGNUP');
 
-    if (name && email && password && confirmPassword) {
+    if (name && email && password && confirmPassword && age && sex) {
       if (password !== confirmPassword) {
         setMessage('Passwords do not match!');
       } else {
-        dispatch(register(name, email, password));
+        dispatch(register(name, email, password, age, sex));
       }
     } else {
       setMessage('Please fill all the details!');
@@ -92,6 +94,48 @@ const RegisterScreen = ({ history, location }) => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
+        </Form.Group>
+        <Form.Group controlId='age'>
+          {/* <Form.Label>Age</Form.Label> */}
+          <Form.Control
+            type='age'
+            placeholder='Enter your age'
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          ></Form.Control>
+        </Form.Group> 
+        <Form.Group
+          controlId='sex'
+          value={sex}
+          onChange={(e) => setSex(e.target.value)}
+          required
+        >
+          <div className='sex__input'>
+            <Form.Label>Sex:</Form.Label>
+            <Form.Check
+              type='radio'
+              label='Male'
+              name='sexRadios'
+              id='maleRadio'
+              value='male'
+            />
+            <Form.Check
+              type='radio'
+              label='Female'
+              name='sexRadios'
+              id='femaleRadio'
+              value='female'
+              className='ml-2'
+            />
+            <Form.Check
+              type='radio'
+              label='Other'
+              name='sexRadios'
+              id='otherRadio'
+              value='other'
+              className='ml-2'
+            />
+          </div>
         </Form.Group>
 
         <Button type='submit' variant='primary'>

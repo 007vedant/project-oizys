@@ -80,9 +80,6 @@ const AddRecordScreen = ({ history, match }) => {
 
   return (
     <Container>
-      <Link to={`/survey/02`} className='btn btn-light my-3'>
-        Back
-      </Link>
       <FormContainer>
         <h1>Step 03</h1>
 

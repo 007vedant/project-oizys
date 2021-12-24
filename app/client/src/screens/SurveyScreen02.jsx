@@ -47,7 +47,7 @@ const SurveyScreen02 = ({ history }) => {
     console.log(responses);
     dispatch(submitSurvey(responses));
     setResponses(initialResponses);
-    history.push('/survey/03');
+    history.push('/thankyou');
   };
 
   return (

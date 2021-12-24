@@ -17,7 +17,7 @@ const LoginScreen = ({ history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { loading: loadingLogin, error: errorLogin, userInfo } = userLogin;
 
-  const redirect = '/survey/01';
+  const redirect = '/survey/03';
 
   useEffect(() => {
     if (userInfo) {
