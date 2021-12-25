@@ -15,10 +15,11 @@ class User(Document):
     email = EmailField(required=True)
     password = StringField(required=True)
     age = IntField(required=True)
-    gender = StringField(required=True)
+    sex = StringField(required=True)
     phq_score = IntField()
     gad_score = IntField()
     strp_score = IntField()
+    audio_cnt = IntField()
     eligible = BooleanField(default=True)
 
     meta = {"collection": "user"}

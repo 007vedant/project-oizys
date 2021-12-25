@@ -1,10 +1,7 @@
-import os
 import jwt
 import datetime
-from bson import ObjectId
 from server.models import User
 from server.config import Config
-from server.utils import token_required
 from flask import request, jsonify, Blueprint
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -28,7 +25,13 @@ def register():
         return jsonify("User already exists!"), 400
 
     hashed_pwd = generate_password_hash(data["password"])
-    user = User(name=data["name"], email=data["email"], password=hashed_pwd)
+    user = User(
+        name=data["name"],
+        email=data["email"],
+        password=hashed_pwd,
+        age=data["age"],
+        sex=data["sex"],
+    )
     user.save()
 
     token = jwt.encode(

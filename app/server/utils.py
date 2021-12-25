@@ -41,10 +41,24 @@ def upload_recording(file, filename, _id):
     file.save(os.path.join(path, filename))
 
 
-def upload_csv(response, filename, _id):
-    path = os.path.join(Config.UPLOAD_DIR, str(_id))
-    os.makedirs(path, exist_ok=True)
-    with open(f"{path}/{filename}.csv", "w") as file:
-        writer = csv.writer(file)
-        for key, value in response.items():
-            writer.writerow([key, value])
+# def upload_csv(response, filename, _id):
+#     path = os.path.join(Config.UPLOAD_DIR, str(_id))
+#     os.makedirs(path, exist_ok=True)
+#     with open(f"{path}/{filename}.csv", "w") as file:
+#         writer = csv.writer(file)
+#         for key, value in response.items():
+#             writer.writerow([key, value])
+
+
+def get_score(resp, l, r):
+    ref_dict = {
+        "Not at all": 0,
+        "Several Days": 1,
+        "More than half the days": 2,
+        "Nearly every day": 3,
+    }
+    score = 0
+    for qno in range(l, r + 1):
+        score += ref_dict[resp[str(qno)]]
+
+    return score
