@@ -37,7 +37,7 @@ const SurveyScreen02 = ({ history }) => {
     setError('');
     for (let i = 1; i < numStart + numQuestions; i++) {
       let key = `${i}`;
-      if (key.length < 2) key = '0' + key;
+      // if (key.length < 2) key = '0' + key;
       if (responses[key] === undefined) {
         if (i < numStart) history.push('/survey/01');
         setError(`Please select a response for question number ${key}`);

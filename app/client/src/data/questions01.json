@@ -1,41 +1,41 @@
 [
   {
-    "qno": "01",
+    "qno": "1",
     "question": "Feeling nervous, anxious or on edge?",
     "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
-    "qno": "02",
+    "qno": "2",
     "question": "Not being able to stop or control worrying?",
     "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
-    "qno": "03",
+    "qno": "3",
     "question": "Worrying too much about different things?",
     "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
-    "qno": "04",
+    "qno": "4",
     "question": "Trouble relaxing?",
     "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
-    "qno": "05",
+    "qno": "5",
     "question": "Being so restless that it is hard to sit still?",
     "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
-    "qno": "06",
+    "qno": "6",
     "question": "Becoming easily annoyed or irritated?",
     "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
-    "qno": "07",
+    "qno": "7",
     "question": "Feeling afraid as if something awful might happen?",
     "options": ["Not at all", "Several Days", "More than half the days", "Nearly every day"]
   },
   {
-    "qno": "08",
+    "qno": "8",
     "question": "If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
     "options": ["Not difficult at all", "Somewhat difficult", "Very Difficult", "Extremely Difficult"]
   }
