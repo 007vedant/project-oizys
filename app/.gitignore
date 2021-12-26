@@ -132,3 +132,6 @@ credentials.json
 
 # User uploads
 uploads/
+
+# Temp
+.mp3
