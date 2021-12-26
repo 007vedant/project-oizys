@@ -31,6 +31,7 @@ def register():
         password=hashed_pwd,
         age=data["age"],
         sex=data["sex"],
+        audio_cnt=1,
     )
     user.save()
 
