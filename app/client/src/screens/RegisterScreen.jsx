@@ -27,7 +27,7 @@ const RegisterScreen = ({ history, location }) => {
   const userRegister = useSelector((state) => state.userRegister);
   const { loading: loadingRegister, error: errorRegister } = userRegister;
 
-  const redirect = '/profile';
+  const redirect = '/survey/01';
 
   useEffect(() => {
     if (userInfo) {

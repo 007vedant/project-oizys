@@ -56,7 +56,7 @@ const SurveyScreen02 = ({ history }) => {
         Back
       </Link>
       <FormContainer>
-        <h1>Patient Health Questionnaire</h1>
+        <h1>PHQ</h1>
         <h6>Over the last 2 weeks, how often have you been bothered by the following problems?</h6>
         {(error || errorSubmit) && (
           <Message variant='danger'>{error || errorSubmit}</Message>

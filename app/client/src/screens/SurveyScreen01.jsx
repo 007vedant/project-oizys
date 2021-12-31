@@ -48,7 +48,7 @@ const SurveyScreen01 = ({ history, match }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Generalized Anxiety Disorder Screener</h1>
+        <h1>GAD</h1>
         <h6>Over the last 2 weeks, how often have you been bothered by the following problems?</h6>
         {error && <Message variant='danger'>{error}</Message>}
 
