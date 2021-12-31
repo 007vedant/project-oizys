@@ -14,8 +14,8 @@ def screening(_id):
     phq_score = get_score(resp, 9, 17)
 
     user = User.objects(_id=ObjectId(_id)).first()
-    user.gad_score = gad_score
-    user.phq_score = phq_score
+    user.gad_scores.append(gad_score)
+    user.phq_scores.append(phq_score)
 
     if gad_score >= 8 or phq_score >= 15:
         user.eligible = False
