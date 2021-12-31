@@ -134,4 +134,4 @@ credentials.json
 uploads/
 
 # Temp
-.mp3
+*.mp3
