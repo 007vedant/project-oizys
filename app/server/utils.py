@@ -47,3 +47,18 @@ def get_score(resp, l, r):
         score += ref_dict[resp[str(qno)]]
 
     return score
+
+
+def get_pss_score(resp, l, r):
+    ref_dict = {
+        "Never": 0,
+        "Almost Never": 1,
+        "Sometimes": 2,
+        "Fairly Often": 3,
+        "Very Often": 4,
+    }
+    score = 0
+    for qno in range(l, r + 1):
+        score += ref_dict[resp[str(qno)]]
+
+    return score
