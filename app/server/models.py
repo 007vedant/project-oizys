@@ -17,9 +17,11 @@ class User(Document):
     password = StringField(required=True)
     age = IntField(required=True)
     sex = StringField(required=True)
-    phq_scores = ListField(IntField())
-    gad_scores = ListField(IntField())
+    phq_score = IntField()
+    gad_score = IntField()
     strp_scores = ListField(IntField())
+    brt_scores = ListField(IntField())
+    pss_scores = ListField(IntField())
     audio_cnt = IntField()
     eligible = BooleanField(default=True)
 
