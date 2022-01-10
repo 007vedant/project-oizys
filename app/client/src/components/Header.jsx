@@ -34,11 +34,17 @@ const Header = () => {
               </LinkContainer> */}
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id='username'>
-                  <LinkContainer to='/profile'>
-                    <NavDropdown.Item>Stroop Test</NavDropdown.Item>
+                  <LinkContainer to='/reaction'>
+                    <NavDropdown.Item>Reaction Time Tests</NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to='/survey/01'>
-                    <NavDropdown.Item>Questionnaire</NavDropdown.Item>
+                  <LinkContainer to='/survey/04'>
+                    <NavDropdown.Item>PSS Questionnaire</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/survey/03'>
+                    <NavDropdown.Item>Audio Upload</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/meditation'>
+                    <NavDropdown.Item>Meditation</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
                 </NavDropdown>
