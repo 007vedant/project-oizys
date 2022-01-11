@@ -5,18 +5,25 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 
 import { logout } from '../actions/user.actions';
 
-const Header = () => {
+const Header = ({ history }) => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
   const logoutHandler = () => {
     dispatch(logout());
+    history.push('/');
   };
 
   return (
     <header>
-      <Navbar bg='primary' variant='dark' collapseOnSelect expand='lg' className='p-2'>
+      <Navbar
+        bg='primary'
+        variant='dark'
+        collapseOnSelect
+        expand='lg'
+        className='p-2'
+      >
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
@@ -46,7 +53,9 @@ const Header = () => {
                   <LinkContainer to='/meditation'>
                     <NavDropdown.Item>Meditation</NavDropdown.Item>
                   </LinkContainer>
-                  <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to='/login'>
