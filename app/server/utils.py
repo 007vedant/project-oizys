@@ -59,6 +59,9 @@ def get_pss_score(resp, l, r):
     }
     score = 0
     for qno in range(l, r + 1):
-        score += ref_dict[resp[str(qno)]]
+        if qno == 4 or qno == 5 or qno == 7 or qno == 8:
+            score += 4 - ref_dict[resp[str(qno)]]
+        else:
+            score += ref_dict[resp[str(qno)]]
 
     return score
