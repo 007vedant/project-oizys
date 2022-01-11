@@ -7,6 +7,7 @@ from mongoengine import (
     IntField,
     BooleanField,
     ListField,
+    FloatField,
 )
 
 
@@ -19,8 +20,8 @@ class User(Document):
     sex = StringField(required=True)
     phq_score = IntField()
     gad_score = IntField()
-    strp_scores = ListField(IntField())
-    brt_scores = ListField(IntField())
+    strp_scores = ListField(FloatField())
+    brt_scores = ListField(FloatField())
     pss_scores = ListField(IntField())
     audio_cnt = IntField()
     eligible = BooleanField(default=True)

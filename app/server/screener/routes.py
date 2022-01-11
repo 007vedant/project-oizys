@@ -46,8 +46,8 @@ def reactscreening(_id):
     brt_score = resp["brt"]
 
     user = User.objects(_id=ObjectId(_id)).first()
-    user.strp_scores.append(strp_score)
-    user.brt_scores.append(brt_score)
+    user.strp_scores.append(float(strp_score))
+    user.brt_scores.append(float(brt_score))
     user.save()
 
     return jsonify("Success"), 201
