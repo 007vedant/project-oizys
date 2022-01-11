@@ -1,8 +1,9 @@
-import React from 'react';
-import { Jumbotron, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Form, Jumbotron, Button } from 'react-bootstrap';
 import { submitReaction } from '../actions/reaction.action';
 
-const ReactionScreen = () => {
+const ReactionScreen = ({ history }) => {
   const [strp, setStrp] = useState(0);
   const [brt, setBrt] = useState(0);
 
@@ -47,7 +48,7 @@ const ReactionScreen = () => {
         <Form.Group controlId='strp'>
           <Form.Label>Stroop Test Score</Form.Label>
           <Form.Control
-            type='number'
+            type='text'
             value={strp}
             onChange={(e) => setStrp(e.target.value)}
           />
@@ -55,7 +56,7 @@ const ReactionScreen = () => {
         <Form.Group controlId='brt' required>
           <Form.Label>Reaction Time Test Score</Form.Label>
           <Form.Control
-            type='number'
+            type='text'
             value={brt}
             onChange={(e) => setBrt(e.target.value)}
           />
