@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Form, Jumbotron, Button } from 'react-bootstrap';
 import { submitReaction } from '../actions/reaction.action';
 
+let submitCtr = 0;
+
 const ReactionScreen = ({ history }) => {
   const [strp, setStrp] = useState(0);
   const [brt, setBrt] = useState(0);
@@ -11,16 +13,19 @@ const ReactionScreen = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
+    submitCtr += 1;
+    console.log(submitCtr);
     dispatch(submitReaction(strp, brt));
-    history.push('/survey/04');
+    if(submitCtr >= 5) {
+      history.push('/survey/04');
+    }
   };
 
   return (
     <Jumbotron>
       <h1>Welcome back!</h1>
       <p>
-        Please take the following reaction time tests and submit your scores.{' '}
+        Please take the following reaction time tests <strong>5 times</strong> and submit your scores after every attempt. Thereafter proceed to the next section.{' '}
         <strong>
           <a
             href='https://www.psytoolkit.org/experiment-library/experiment_stroop.html'
