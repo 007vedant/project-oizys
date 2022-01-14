@@ -3,20 +3,24 @@ import { useDispatch } from 'react-redux';
 import { Form, Jumbotron, Button } from 'react-bootstrap';
 import { submitReaction } from '../actions/reaction.action';
 
-let submitCtr = 0;
+// let submitCtr = 0;
 
 const ReactionScreen = ({ history }) => {
   const [strp, setStrp] = useState(0);
   const [brt, setBrt] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   const dispatch = useDispatch();
 
+
+
   const submitHandler = (e) => {
     e.preventDefault();
-    submitCtr += 1;
-    console.log(submitCtr);
+    setCounter(counter+1);
     dispatch(submitReaction(strp, brt));
-    if(submitCtr >= 5) {
+    setStrp(0);
+    setBrt(0);
+    if(counter >= 4) {
       history.push('/survey/04');
     }
   };
@@ -47,6 +51,8 @@ const ReactionScreen = ({ history }) => {
           </a>
         </strong>
         .
+        <br></br>
+        <p> Number of Submits Left: {5 - counter}</p>
       </p>
 
       <Form onSubmit={submitHandler}>
